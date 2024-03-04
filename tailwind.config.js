@@ -11,6 +11,12 @@ module.exports = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+          banner: "url('../../public/images/banner.svg')",
+      }, container: {
+        center: true,
+        padding:'0.5rem'
+      }, fontFamily: {
+        georama: ['var(--font-georama)']
       },
     },
   },
