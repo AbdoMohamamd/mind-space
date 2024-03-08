@@ -7,7 +7,6 @@ import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 
 const HomePage = ({data}) => {
-  console.log(data)
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
