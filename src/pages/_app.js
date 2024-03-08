@@ -1,51 +1,58 @@
-import "@/styles/globals.css";
-import localFont from 'next/font/local'
+import Layout from '@/components/Layout/Layout';
+import '@/styles/globals.css';
+import localFont from 'next/font/local';
 
-const georama = localFont({
+const georama = localFont ({
   src: [
     {
       path: '../../public/fonts/Georama-Thin.ttf',
-      weight: '100'
-    }, {
+      weight: '100',
+    },
+    {
       path: '../../public/fonts/Georama-ExtraLight.ttf',
-      weight: '200'
-    }, {
+      weight: '200',
+    },
+    {
       path: '../../public/fonts/Georama-Light.ttf',
-      weight: '300'
+      weight: '300',
     },
     {
       path: '../../public/fonts/Georama-Regular.ttf',
-      weight: '400'
+      weight: '400',
     },
 
     {
       path: '../../public/fonts/Georama-Medium.ttf',
-      weight: '500'
+      weight: '500',
     },
     {
       path: '../../public/fonts/Georama-SemiBold.ttf',
-      weight: '600'
+      weight: '600',
     },
 
     {
       path: '../../public/fonts/Georama-Bold.ttf',
-      weight: '700'
+      weight: '700',
     },
 
     {
       path: '../../public/fonts/Georama-ExtraBold.ttf',
-      weight: '800'
+      weight: '800',
     },
 
     {
       path: '../../public/fonts/Georama-Black.ttf',
-      weight: '900'
-    }
+      weight: '900',
+    },
   ],
-  variable: '--font-georama'
-})
-export default function App({ Component, pageProps }) {
-  return <main className={`${georama.variable}  `}>
-    <Component {...pageProps} />
-  </main>
+  variable: '--font-georama',
+});
+export default function App({Component, pageProps}) {
+  return (
+    <main className={`${georama.variable}  `}>
+      {' '}<Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </main>
+  );
 }
