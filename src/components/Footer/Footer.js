@@ -80,11 +80,11 @@ const Footer = () => {
           
           {/* Social Icons */}
           <div className="group relative hover:cursor-pointer flex justify-center">
-            <Image src={Instagram} width={30} height={30} className="p-1" />
+            <Image src={Instagram} width={30} height={30} className="p-1" alt="instagram logo" />
             <div className="group-hover:w-1/2 group-hover:h-0.5 w-0 h-0 transition-all bg-white rounded-xl duration-300 absolute top-full" />
           </div>
           <div className="group relative hover:cursor-pointer flex justify-center">
-            <Image src={LinkedIn} width={30} height={30} className="p-1" />
+            <Image src={LinkedIn} width={30} height={30} className="p-1" alt="LinkedIn logo" />
             <div className="group-hover:w-1/2 group-hover:h-0.5 w-0 h-0 transition-all bg-white rounded-xl duration-300 absolute top-full" />
           </div>
         </div>
