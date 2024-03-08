@@ -139,8 +139,9 @@ const Grid = () => {
     },
   ];
   return (
-    <div className="mb-12 md:mb-36 grid-cols-1 grid md:grid-cols-2 container md:gap-x-20 px-12 gap-y-12 md:gap-y-36 md:px-32">
+    <div className="container px-12 md:px-32 grid grid-cols-1 md:grid-cols-2 gap-y-12 md:gap-y-36 md:gap-x-20 mb-12 md:mb-36">
       {cards.map ((card, index) => (
+        // Render GridCard component for each card
         <GridCard
           image={card.image}
           title={card.title}
