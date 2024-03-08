@@ -2,7 +2,8 @@ import React from 'react';
 import GridCard from '../GridCard/GridCard';
 
 const Grid = ({data}) => {
-  // console.log (data);
+
+  console.log (data);
 
   // const cards = [
   //   {
@@ -144,7 +145,7 @@ const Grid = ({data}) => {
         <GridCard
           image={card.details.image}
           title={card.title}
-          paragraph={card.subtitle}
+          paragraph={card.details.text}
           alt={card.handle}
           key={card.id}
         />
