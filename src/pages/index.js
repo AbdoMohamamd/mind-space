@@ -42,7 +42,7 @@ export default function Home () {
       <Banner />
       <section className="flex flex-col items-center mb-12 md:mb-36 ">
         {' '}  <Grid />
-        <Image src="/images/line.svg" width={200} height={200} />
+        <Image src="/images/line.svg" width={200} height={200} alt={"line"}/>
         <p className="font-georama"><span className="font-georama font-medium text-primary-red">we'd love</span> to see your project added here</p>
       </section>
 

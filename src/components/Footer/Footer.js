@@ -74,7 +74,7 @@ const Footer = () => {
       <div className="flex justify-between flex-col md:flex-row">
         <div className="flex gap-4 items-center p-1 mb-5 md:mb-0">
           <Link href="/">
-            <Image src={Logo} loading={'eager'} />
+            <Image src={Logo} loading={'eager'} alt="footer logo" />
           </Link>
           <span className="hidden md:block text-4xl">|</span>
           
