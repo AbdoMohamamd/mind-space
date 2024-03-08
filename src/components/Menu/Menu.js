@@ -12,7 +12,7 @@ const Menu = ({isMenuOpen}) => {
     {text: 'contact us', href: '/contact-us'},
   ];
   const {pathname} = useRouter ();
-  console.log (pathname);
+  
   return (
     <div
       className={`${isMenuOpen ? 'max-h-[30rem]' : 'max-h-0 '} md:h-max bg-black z-50 overflow-hidden items-center flex flex-col  md:flex-row md:overflow-visible  text-5xl md:gap-x-12 font-georama font-medium md:text-[1.0625rem] transition-all ease-in-out duration-500`}

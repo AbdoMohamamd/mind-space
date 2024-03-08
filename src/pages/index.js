@@ -3,9 +3,11 @@ import {Inter} from 'next/font/google';
 import NavBar from '@/components/NavBar/NavBar';
 import Banner from '@/components/Banner/Banner';
 import Grid from '@/components/Grid/Grid';
+import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 
-export default function Home () {
+const HomePage = ({data}) => {
+  console.log(data)
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
@@ -41,11 +43,44 @@ export default function Home () {
 
       <Banner />
       <section className="flex flex-col items-center mb-12 md:mb-36 ">
-        {' '}  <Grid />
-        <Image src="/images/line.svg" width={200} height={200} alt={"line"}/>
-        <p className="font-georama"><span className="font-georama font-medium text-primary-red">we'd love</span> to see your project added here</p>
+        <Grid data={data.data.sections} />
+        <Image src="/images/line.svg" width={200} height={200} alt={'line'} />
+        <p className="font-georama">
+          <span className="font-georama font-medium text-primary-red">
+            we'd love
+          </span>
+          {' '}
+          to see your project added here
+        </p>
       </section>
 
     </main>
   );
+};
+
+export async function getServerSideProps () {
+  try {
+    const response = await axios.get ('/page/news', {
+      headers: {
+        'Accept-Language': 'en',
+      },
+    });
+
+    const data = response.data;
+
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.error ('Error fetching data:', error);
+    return {
+      props: {
+        data: null, // You can handle errors by setting data to a default value or showing an error message in your component
+      },
+    };
+  }
 }
+
+export default HomePage;
