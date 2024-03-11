@@ -11,7 +11,7 @@ import Head from 'next/head'
 
 const HomePage = ({data,data1}) => {
 
-  console.log(data1)
+  const metadata=data1.data
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
@@ -39,7 +39,7 @@ const HomePage = ({data,data1}) => {
   return (
     <main className="md:pt-8">
       <Head><title>Home</title>
-      <meta name='description'>{data1.data.seo_description}</meta>
+      {/* <meta name='description'>{metadata.seo_description}</meta> */}
       </Head>
       <NavBar />
       <Banner />
