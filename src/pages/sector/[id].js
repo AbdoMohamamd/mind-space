@@ -21,7 +21,10 @@ const Sector = ({data}) => {
 
                 <div className="flex flex-col md:grid md:grid-cols-4 md:gap-x-5 mb-5 ">
                   <div className="md:col-span-3 mb-5 order-2 md:order-1 ">
-                    {' '}<h1 className="font-bold text-lg md:text-base">Description</h1>
+                    {' '}
+                    <h1 className="font-bold text-lg md:text-base">
+                      Description
+                    </h1>
 
                     <p className="max-w-[44rem]">{sector.text}</p>
                   </div>
@@ -32,7 +35,10 @@ const Sector = ({data}) => {
                       <p> {sector.agency}</p>
                     </div>
                     <div className="  border-white border-b-2 mb-2  w-max">
-                      {' '}<p className="font-bold text-lg md:text-base">Cinematographer</p>
+                      {' '}
+                      <p className="font-bold text-lg md:text-base">
+                        Cinematographer
+                      </p>
                       <p> {sector.cinematographer}</p>
                     </div>
 
@@ -72,6 +78,9 @@ const Sector = ({data}) => {
                           </div>
                         </p>
                       </Link>}
+                  <Link href="/our-sectors" className="hover:underline hover:text-gray-500 ">
+                    go back
+                  </Link>
                   {sectors[index + 1] == null
                     ? <p className="flex gap-x-1 items-center hover:cursor-pointer font-medium">
                         next

@@ -4,7 +4,7 @@ import Link from 'next/link';
 const SectorCard = ({id, title, image, description}) => {
   return (
     <Link href={'/sector/' + id}>
-      {' '}<div className="w-max h-[30rem] ">
+      {' '}<div className="w-72 md:w-max md:h-[30rem] ">
         <Image src={image} width={500} height={500} />
         <h1 className="text-lg md:text-xl font-georama font-bold ">
           {title}

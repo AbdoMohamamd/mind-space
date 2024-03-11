@@ -13,7 +13,7 @@ const OurSectors = ({data}) => {
       <div className="min-h-screen container ">
         <NavBar />
         <Banner />
-        <h1 className="font-bold font-georama text-center text-6xl mb-12">
+        <h1 className="font-bold font-georama text-center text-3xl md:text-6xl mb-12">
           Our Sectors
         </h1>
         <div> <CustomSwiper cards={data.data} /></div>
