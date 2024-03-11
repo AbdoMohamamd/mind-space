@@ -17,7 +17,7 @@ const NavBar = () => {
               loading={'eager'}
               src={Logo}
               className="w-12 h-12 rounded-full md:w-20 md:h-20   "
-              alt={"logo"}
+              alt={'logo'}
             />
           </Link>
         </div>

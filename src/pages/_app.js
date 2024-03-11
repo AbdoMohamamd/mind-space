@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import localFont from 'next/font/local';
+import { Metadata } from 'next'
 
 const georama = localFont ({
   src: [
@@ -46,6 +47,8 @@ const georama = localFont ({
   ],
   variable: '--font-georama',
 });
+
+
 export default function App({Component, pageProps}) {
   return (
     <main className={`${georama.variable}  `}>

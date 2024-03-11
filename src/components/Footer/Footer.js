@@ -10,11 +10,12 @@ const Footer = () => {
   // Data for the footer
   const emailAddress = 'example@gmail.com';
   const links = [
-    { text: 'about us', href: '/about-us' },
-    { text: 'our work', href: '/' },
-    { text: 'our clients', href: '/our-clients' },
-    { text: 'our sectors', href: '/our-sectors' },
-    { text: 'contact us', href: '/contact-us' },
+    {text: 'home', href: '/'},
+    {text: 'about us', href: '/about-us'},
+
+    {text: 'our clients', href: '/our-clients'},
+    {text: 'our sectors', href: '/our-sectors'},
+    {text: 'contact us', href: '/contact-us'},
   ];
   const offices = [
     'dubai, UAE',
@@ -29,8 +30,10 @@ const Footer = () => {
       <div className="grid grid-cols-2 md:grid-cols-5 mb-12">
         {/* Sitemap */}
         <div className="col-span-1 md:flex md:flex-col mb-5 md:mb-0 ">
-          <h1 className="text-xl font-georama font-bold mb-5 md:text-2xl">Sitemap</h1>
-          {links.map((link, index) => (
+          <h1 className="text-xl font-georama font-bold mb-5 md:text-2xl">
+            Sitemap
+          </h1>
+          {links.map ((link, index) => (
             <Link
               href={link.href}
               key={index}
@@ -44,8 +47,10 @@ const Footer = () => {
 
         {/* Offices */}
         <div className="col-span-1 flex flex-col mb-5 md:mb-0  ">
-          <h1 className="text-xl font-georama font-bold mb-5 md:text-2xl">Offices</h1>
-          {offices.map((office, index) => (
+          <h1 className="text-xl font-georama font-bold mb-5 md:text-2xl">
+            Offices
+          </h1>
+          {offices.map ((office, index) => (
             <Link
               href="/"
               key={index}
@@ -59,7 +64,9 @@ const Footer = () => {
 
         {/* Inquiries */}
         <div className="col-span-3 flex flex-col md:items-end">
-          <h1 className="text-xl font-georama font-bold mb-5 md:text-2xl">Inquiries</h1>
+          <h1 className="text-xl font-georama font-bold mb-5 md:text-2xl">
+            Inquiries
+          </h1>
           <a
             href={`mailto:${emailAddress}`}
             className="group relative justify-center flex w-max text-lg md:text-xl"
@@ -77,14 +84,26 @@ const Footer = () => {
             <Image src={Logo} loading={'eager'} alt="footer logo" />
           </Link>
           <span className="hidden md:block text-4xl">|</span>
-          
+
           {/* Social Icons */}
           <div className="group relative hover:cursor-pointer flex justify-center">
-            <Image src={Instagram} width={30} height={30} className="p-1" alt="instagram logo" />
+            <Image
+              src={Instagram}
+              width={30}
+              height={30}
+              className="p-1"
+              alt="instagram logo"
+            />
             <div className="group-hover:w-1/2 group-hover:h-0.5 w-0 h-0 transition-all bg-white rounded-xl duration-300 absolute top-full" />
           </div>
           <div className="group relative hover:cursor-pointer flex justify-center">
-            <Image src={LinkedIn} width={30} height={30} className="p-1" alt="LinkedIn logo" />
+            <Image
+              src={LinkedIn}
+              width={30}
+              height={30}
+              className="p-1"
+              alt="LinkedIn logo"
+            />
             <div className="group-hover:w-1/2 group-hover:h-0.5 w-0 h-0 transition-all bg-white rounded-xl duration-300 absolute top-full" />
           </div>
         </div>

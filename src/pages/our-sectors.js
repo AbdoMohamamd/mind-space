@@ -5,11 +5,18 @@ import CustomSwiper from '@/components/CustomSwiper/CustomSwiper';
 import NavBar from '@/components/NavBar/NavBar';
 import Banner from '@/components/Banner/Banner';
 import Footer from '@/components/Footer/Footer';
+import Head from 'next/head';
 
-const OurSectors = ({data}) => {
+const OurSectors = ({data, metadata}) => {
   console.log (data);
   return (
-    <div >
+    <div>
+      <Head>
+        <title>{"Our Sectors"}</title>
+        <link rel="icon" href={metadata.data.seo_image} />
+        <meta name="description" content={metadata.data.seo_description} />
+        <meta name="title" content={metadata.data.seo_title} />
+      </Head>
       <div className="min-h-screen container ">
         <NavBar />
         <Banner />
@@ -18,7 +25,7 @@ const OurSectors = ({data}) => {
         </h1>
         <div> <CustomSwiper cards={data.data} /></div>
       </div>
-     <div className="bg-primary-red"> <Footer /></div>
+      <div className="bg-primary-red"> <Footer /></div>
     </div>
   );
 };
@@ -30,11 +37,19 @@ export async function getServerSideProps () {
       },
     });
 
+    const response1 = await axios.get ('/page/home', {
+      headers: {
+        'Accept-Language': 'en',
+      },
+    });
+
+    const metadata = response1.data;
     const data = response.data;
 
     return {
       props: {
         data,
+        metadata,
       },
     };
   } catch (error) {

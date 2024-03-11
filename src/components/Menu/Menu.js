@@ -5,14 +5,15 @@ import {useRouter} from 'next/router';
 
 const Menu = ({isMenuOpen}) => {
   const links = [
+    {text: 'home', href: '/'},
     {text: 'about us', href: '/about-us'},
-    {text: 'our work', href: '/'},
+
     {text: 'our clients', href: '/our-clients'},
     {text: 'our sectors', href: '/our-sectors'},
     {text: 'contact us', href: '/contact-us'},
   ];
   const {pathname} = useRouter ();
-  
+
   return (
     <div
       className={`${isMenuOpen ? 'max-h-[30rem]' : 'max-h-0 '} md:h-max bg-black z-50 overflow-hidden items-center flex flex-col  md:flex-row md:overflow-visible  text-5xl md:gap-x-12 font-georama font-medium md:text-[1.0625rem] transition-all ease-in-out duration-500`}
