@@ -7,10 +7,7 @@ import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
 
-
-
-const HomePage = ({data, metadata}) => {
-  console.log (metadata);
+const HomePage = ({data}) => {
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
@@ -37,11 +34,6 @@ const HomePage = ({data, metadata}) => {
 
   return (
     <main className="md:pt-8">
-      <Head><title>{metadata.data.title}</title>
-      <link rel='icon' href={metadata.data.seo_image}/>
-      <meta name='description' content={metadata.data.seo_description}/>
-      <meta name='title' content={metadata.data.seo_title}/>
-      </Head>
       <NavBar />
       <Banner />
       <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
@@ -76,26 +68,17 @@ export async function getServerSideProps () {
     });
 
     const data = response.data;
-    const response1 = await axios.get ('/page/home', {
-      headers: {
-        'Accept-Language': 'en',
-      },
-    });
-
-    const metadata = response1.data;
 
     return {
       props: {
         data,
-        metadata,
       },
     };
   } catch (error) {
     console.error ('Error fetching data:', error);
     return {
       props: {
-        data: null,
-        metadata: null, // You can handle errors by setting data to a default value or showing an error message in your component
+        data: null, // You can handle errors by setting data to a default value or showing an error message in your component
       },
     };
   }

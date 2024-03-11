@@ -6,12 +6,10 @@ import NavBar from '@/components/NavBar/NavBar';
 import Banner from '@/components/Banner/Banner';
 import Footer from '@/components/Footer/Footer';
 
-
-const OurSectors = ({data, metadata}) => {
+const OurSectors = ({data}) => {
   console.log (data);
   return (
-    <div>
-     
+    <div >
       <div className="min-h-screen container ">
         <NavBar />
         <Banner />
@@ -20,7 +18,7 @@ const OurSectors = ({data, metadata}) => {
         </h1>
         <div> <CustomSwiper cards={data.data} /></div>
       </div>
-      <div className="bg-primary-red"> <Footer /></div>
+     <div className="bg-primary-red"> <Footer /></div>
     </div>
   );
 };
@@ -32,19 +30,11 @@ export async function getServerSideProps () {
       },
     });
 
-    const response1 = await axios.get ('/page/home', {
-      headers: {
-        'Accept-Language': 'en',
-      },
-    });
-
-    const metadata = response1.data;
     const data = response.data;
 
     return {
       props: {
         data,
-        metadata,
       },
     };
   } catch (error) {
