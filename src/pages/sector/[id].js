@@ -2,44 +2,95 @@ import React from 'react';
 import {useRouter} from 'next/router';
 import Image from 'next/image';
 import axios from '@/utils/axios';
+import ArrowRight from '@/../public/images/arrow-right.svg';
+import Link from 'next/link';
 const Sector = ({data}) => {
   const sectors = data.data;
-  console.log (sectors[0]);
+
   return (
     <div className="container font-georama flex flex-col items-center">
       {sectors.map (
         (sector, index) =>
           sector.id === parseInt (useRouter ().query.id)
             ? <div key={index}>
-                <h1 className="font-bold  w-max text-2xl mb-2 underline">{sector.title}</h1>
+                <h1 className="font-bold  md:text-2xl mb-2 underline">
+                  {sector.title}
+                </h1>
 
                 {' '}<Image src={sector.image} width={800} height={800} />
 
-                <div className="grid grid-cols-4 gap-x-5 w-max ">
-                  <div className="col-span-3">
-                    {' '}<h1 className="font-bold">Description</h1>
+                <div className="flex flex-col md:grid md:grid-cols-4 md:gap-x-5 mb-5 ">
+                  <div className="md:col-span-3 mb-5 order-2 md:order-1 ">
+                    {' '}<h1 className="font-bold text-lg md:text-base">Description</h1>
 
                     <p className="max-w-[44rem]">{sector.text}</p>
                   </div>
-                  <div className="col-span-1 ">
+                  <div className="md:col-span-1 order-1 md:order-2 ">
 
-                    <div className="  border-white border-b-2 mb-2">
-                      <p className="font-bold">Agency</p>
+                    <div className="  border-white border-b-2 mb-2  w-max">
+                      <p className="font-bold text-lg md:text-base">Agency</p>
                       <p> {sector.agency}</p>
                     </div>
-                    <div className="  border-white border-b-2 mb-2">
-                      {' '}<p className="font-bold">Cinematographer</p>
+                    <div className="  border-white border-b-2 mb-2  w-max">
+                      {' '}<p className="font-bold text-lg md:text-base">Cinematographer</p>
                       <p> {sector.cinematographer}</p>
                     </div>
 
-                    <div className="  border-white border-b-2 mb-2">
-                      <p className="font-bold">Client</p>
+                    <div className="  border-white border-b-2 mb-2  w-max">
+                      <p className="font-bold text-lg md:text-base">Client</p>
                       <p> {sector.client}</p>
                     </div>
                   </div>
                 </div>
+                <div className="flex justify-between">
+                  {' '}
+                  {sectors[index - 1] == null
+                    ? <p className="flex gap-x-1 items-center hover:cursor-pointer font-medium">
 
-                <p />
+                        <Image
+                          src={ArrowRight}
+                          width={20}
+                          height={20}
+                          className="rotate-180"
+                        />
+                        previous
+
+                      </p>
+                    : <Link href={'/sector/' + sectors[index - 1].id}>
+
+                        <p className="flex gap-x-1 items-center group relative font-medium hover:underline hover:text-gray-500">
+
+                          <Image
+                            src={ArrowRight}
+                            width={20}
+                            height={20}
+                            className="rotate-180"
+                          />
+                          previous
+                          <div className="group-hover:bg-white h-0.5 w-full">
+                            {' '}
+                          </div>
+                        </p>
+                      </Link>}
+                  {sectors[index + 1] == null
+                    ? <p className="flex gap-x-1 items-center hover:cursor-pointer font-medium">
+                        next
+                        <Image src={ArrowRight} width={20} height={20} />
+
+                      </p>
+                    : <Link href={'/sector/' + sectors[index + 1].id}>
+
+                        <p className="flex gap-x-1 items-center group relative font-medium hover:underline hover:text-gray-500">
+                          next
+                          <Image src={ArrowRight} width={20} height={20} />
+
+                          <div className="group-hover:bg-white h-0.5 w-full">
+                            {' '}
+                          </div>
+                        </p>
+                      </Link>}
+                </div>
+
               </div>
             : ''
       )}
