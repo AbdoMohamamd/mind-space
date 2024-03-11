@@ -17,8 +17,8 @@ const GridCard = ({image, title, paragraph, alt}) => {
         {title}
       </h1>
 
-      <p className="text-xs lg:text-sm xl:text-lg font-georama font-normal" dangerouslySetInnerHTML={{ __html:paragraph }}>
-        
+      <p className="text-xs lg:text-sm xl:text-lg font-georama font-normal"  >
+        {paragraph}
       </p>
     </div>
   );

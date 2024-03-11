@@ -3,7 +3,7 @@ import GridCard from '../GridCard/GridCard';
 
 const Grid = ({data}) => {
 
-  console.log (data);
+  
 
   // const cards = [
   //   {
@@ -145,7 +145,7 @@ const Grid = ({data}) => {
         <GridCard
           image={card.details.image}
           title={card.title}
-          paragraph={card.details.text}
+          paragraph={card.subtitle}
           alt={card.handle}
           key={card.id}
         />

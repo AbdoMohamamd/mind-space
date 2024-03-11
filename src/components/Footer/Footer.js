@@ -13,7 +13,7 @@ const Footer = () => {
     { text: 'about us', href: '/about-us' },
     { text: 'our work', href: '/' },
     { text: 'our clients', href: '/our-clients' },
-    { text: 'our teams', href: '/our-teams' },
+    { text: 'our sectors', href: '/our-sectors' },
     { text: 'contact us', href: '/contact-us' },
   ];
   const offices = [

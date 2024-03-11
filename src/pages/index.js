@@ -5,6 +5,7 @@ import Banner from '@/components/Banner/Banner';
 import Grid from '@/components/Grid/Grid';
 import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
+import Footer from '@/components/Footer/Footer';
 
 const HomePage = ({data}) => {
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
@@ -33,6 +34,8 @@ const HomePage = ({data}) => {
 
   return (
     <main className="md:pt-8">
+      <NavBar />
+      <Banner />
       <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
         <div
           className={`w-1  bg-primary-red  rounded-lg`}
@@ -40,7 +43,6 @@ const HomePage = ({data}) => {
         />
       </div>
 
-      <Banner />
       <section className="flex flex-col items-center mb-12 md:mb-36 ">
         <Grid data={data.data.sections} />
         <Image src="/images/line.svg" width={200} height={200} alt={'line'} />
@@ -52,7 +54,7 @@ const HomePage = ({data}) => {
           to see your project added here
         </p>
       </section>
-
+      <Footer />
     </main>
   );
 };

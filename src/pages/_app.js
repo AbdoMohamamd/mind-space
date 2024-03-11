@@ -1,4 +1,3 @@
-import Layout from '@/components/Layout/Layout';
 import '@/styles/globals.css';
 import localFont from 'next/font/local';
 
@@ -50,9 +49,9 @@ const georama = localFont ({
 export default function App({Component, pageProps}) {
   return (
     <main className={`${georama.variable}  `}>
-      {' '}<Layout>
-        <Component {...pageProps} />
-      </Layout>
+
+      <Component {...pageProps} />
+
     </main>
   );
 }
