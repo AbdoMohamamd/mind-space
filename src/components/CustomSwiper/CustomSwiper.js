@@ -13,10 +13,10 @@ const CustomSwiper = ({ cards }) => {
       spaceBetween={50}
       freeMode={true}
       modules={[FreeMode]}
-      className='hover:cursor-pointer '
+      className='hover:cursor-pointer  mb-9 '
     >
       {cards.map((card, index) => (
-        <SwiperSlide key={index} className='!w-auto'>
+        <SwiperSlide key={index} className='!w-auto '>
           <SectorCard id={card.id} title={card.title} image={card.image} description={card.seo_description}/>
         </SwiperSlide>
       ))}

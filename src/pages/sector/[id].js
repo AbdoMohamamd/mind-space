@@ -11,23 +11,29 @@ const Sector = ({data}) => {
         (sector, index) =>
           sector.id === parseInt (useRouter ().query.id)
             ? <div key={index}>
-                <h1 className="font-bold  w-max">{sector.title}</h1>
+                <h1 className="font-bold  w-max text-2xl mb-2 underline">{sector.title}</h1>
 
                 {' '}<Image src={sector.image} width={800} height={800} />
 
-                <div className="flex gap-x-5 w-max">
-                  <div>
-                    {' '}<h1 className="underline">Description</h1>
+                <div className="grid grid-cols-4 gap-x-5 w-max ">
+                  <div className="col-span-3">
+                    {' '}<h1 className="font-bold">Description</h1>
 
                     <p className="max-w-[44rem]">{sector.text}</p>
                   </div>
-                  <div>
-                    {' '} <div>
-                      <p className="underline">Agency</p>
+                  <div className="col-span-1 ">
+
+                    <div className="  border-white border-b-2 mb-2">
+                      <p className="font-bold">Agency</p>
                       <p> {sector.agency}</p>
-                      <p className="underline">Cinematographer</p>
+                    </div>
+                    <div className="  border-white border-b-2 mb-2">
+                      {' '}<p className="font-bold">Cinematographer</p>
                       <p> {sector.cinematographer}</p>
-                      <p className="underline">Client</p>
+                    </div>
+
+                    <div className="  border-white border-b-2 mb-2">
+                      <p className="font-bold">Client</p>
                       <p> {sector.client}</p>
                     </div>
                   </div>
