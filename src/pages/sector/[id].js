@@ -6,9 +6,10 @@ import ArrowRight from '@/../public/images/arrow-right.svg';
 import Link from 'next/link';
 const Sector = ({data}) => {
   const sectors = data.data;
-
+console.log(sectors)
   return (
     <div className="container font-georama flex flex-col items-center">
+      
       {sectors.map (
         (sector, index) =>
           sector.id === parseInt (useRouter ().query.id)
@@ -17,10 +18,10 @@ const Sector = ({data}) => {
                   {sector.title}
                 </h1>
 
-                {' '}<Image src={sector.image} width={800} height={800} />
+                {' '}<Image src={sector.image} width={1000} height={1000} className="w-full h-full"/>
 
                 <div className="flex flex-col md:grid md:grid-cols-4 md:gap-x-5 mb-5 ">
-                  <div className="md:col-span-3 mb-5 order-2 md:order-1 ">
+                  <div className="md:col-span-2 mb-5 order-2 md:order-1 ">
                     {' '}
                     <h1 className="font-bold text-lg md:text-base">
                       Description
@@ -28,13 +29,19 @@ const Sector = ({data}) => {
 
                     <p className="max-w-[44rem]">{sector.text}</p>
                   </div>
-                  <div className="md:col-span-1 order-1 md:order-2 ">
+                  <div className="md:col-span-2 order-1 md:order-2 ">
 
-                    <div className="  border-white border-b-2 mb-2  w-max">
+                    <div className="  border-white border-b-2 mb-2  ">
                       <p className="font-bold text-lg md:text-base">Agency</p>
                       <p> {sector.agency}</p>
                     </div>
-                    <div className="  border-white border-b-2 mb-2  w-max">
+                    <div className="  border-white border-b-2 mb-2 ">
+                      {' '}
+                      <p className="font-bold text-lg md:text-base">
+                        Director                      </p>
+                      <p> {sector.directors}</p>
+                    </div>
+                    <div className="  border-white border-b-2 mb-2 ">
                       {' '}
                       <p className="font-bold text-lg md:text-base">
                         Cinematographer
@@ -42,7 +49,7 @@ const Sector = ({data}) => {
                       <p> {sector.cinematographer}</p>
                     </div>
 
-                    <div className="  border-white border-b-2 mb-2  w-max">
+                    <div className="  border-white border-b-2 mb-2  ">
                       <p className="font-bold text-lg md:text-base">Client</p>
                       <p> {sector.client}</p>
                     </div>
