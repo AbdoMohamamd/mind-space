@@ -5,18 +5,13 @@ import CustomSwiper from '@/components/CustomSwiper/CustomSwiper';
 import NavBar from '@/components/NavBar/NavBar';
 import Banner from '@/components/Banner/Banner';
 import Footer from '@/components/Footer/Footer';
-import Head from 'next/head';
+
 
 const OurSectors = ({data, metadata}) => {
   console.log (data);
   return (
     <div>
-      <Head>
-        <title>{"Our Sectors"}</title>
-        <link rel="icon" href={metadata.data.seo_image} />
-        <meta name="description" content={metadata.data.seo_description} />
-        <meta name="title" content={metadata.data.seo_title} />
-      </Head>
+     
       <div className="min-h-screen container ">
         <NavBar />
         <Banner />

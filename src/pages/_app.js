@@ -1,6 +1,6 @@
 import '@/styles/globals.css';
 import localFont from 'next/font/local';
-import { Metadata } from 'next'
+
 
 const georama = localFont ({
   src: [

@@ -6,7 +6,7 @@ import Grid from '@/components/Grid/Grid';
 import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
-import Head from 'next/head';
+
 
 
 const HomePage = ({data, metadata}) => {

@@ -1,15 +1,10 @@
 import React from 'react';
 import axios from '@/utils/axios';
-import Head from 'next/head'
+
 const OurClients = ({metadata}) => {
   return (
     <div>
-      {' '} <Head>
-        <title>{'Our Clients'}</title>
-        <link rel="icon" href={metadata.data.seo_image} />
-        <meta name="description" content={metadata.data.seo_description} />
-        <meta name="title" content={metadata.data.seo_title} />
-      </Head>
+      {' '} 
     </div>
   );
 };
