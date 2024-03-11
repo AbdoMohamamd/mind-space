@@ -7,6 +7,10 @@ import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
 
+export const metadata={
+  title:"home"
+}
+
 const HomePage = ({data}) => {
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
