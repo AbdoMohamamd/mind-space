@@ -22,10 +22,10 @@ const Sector = ({data}) => {
                   height={1000}
                   className="w-[90rem]"
                 />
-                <div className="bg-black  flex items-center justify-center max-w-[90rem]">
-                  <div className="container mx-auto p-8 bg-gray-800 rounded-md">
+                <div className=" bg-gray-800 flex items-center justify-center max-w-[90rem]">
+                  <div className="container mx-auto p-8  rounded-md">
                     <div className="md:flex mb-12">
-                      <div className="md:w-4/6 pr-8 mb-8 md:mb-0">
+                      <div className="md:w-5/6 pr-8 mb-8 md:mb-0">
                         <h1 className="text-4xl font-bold mb-4 text-white">
                           {sector.title}
                         </h1>
@@ -36,7 +36,7 @@ const Sector = ({data}) => {
                           {sector.text}
                         </p>
                       </div>
-                      <div className="md:w-2/6">
+                      <div className="md:w-1/6">
                         <div className="mb-4">
                           <h2 className="text-2xl font-semibold mb-2 text-white">
                             Agency
@@ -49,13 +49,23 @@ const Sector = ({data}) => {
                           </h2>
                           <p className="text-gray-300">{sector.directors}</p>
                         </div>
-                        <div>
+                        <div className="mb-4">
                           <h2 className="text-2xl font-semibold mb-2 text-white">
                             Cinematographer
                           </h2>
                           <p className="text-gray-300">
                             {sector.cinematographer}
                           </p>
+                          
+                        </div>
+                        <div>
+                          <h2 className="text-2xl font-semibold mb-2 text-white">
+                            Client
+                          </h2>
+                          <p className="text-gray-300">
+                            {sector.client}
+                          </p>
+                          
                         </div>
                       </div>
                     </div>
