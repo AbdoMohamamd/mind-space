@@ -38,9 +38,6 @@ const HomePage = ({data,data1}) => {
 
   return (
     <main className="md:pt-8">
-      <Head><title>Home</title>
-      {/* <meta name='description'>{metadata.seo_description}</meta> */}
-      </Head>
       <NavBar />
       <Banner />
       <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
@@ -66,7 +63,7 @@ const HomePage = ({data,data1}) => {
   );
 };
 
-export async function getServerSideProps (url) {
+export async function getServerSideProps () {
   try {
     const response = await axios.get ('/page/news', {
       headers: {
@@ -75,27 +72,15 @@ export async function getServerSideProps (url) {
     });
 
     const data = response.data;
-    const response1 = await axios.get ('/page/home', {
-      headers: {
-        'Accept-Language': 'en',
-      },
-    });
-
-    const data1 = response1.data;
-    
 
     return {
       props: {
-        data,data1
+        data,
       },
     };
   } catch (error) {
     console.error ('Error fetching data:', error);
-    return {
-      props: {
-        data: null,data1:null // You can handle errors by setting data to a default value or showing an error message in your component
-      },
-    };
+    
   }
 }
 
