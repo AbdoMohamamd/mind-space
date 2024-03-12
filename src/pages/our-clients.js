@@ -1,15 +1,17 @@
-import React from 'react'
-import Head from 'next/head'
-import axios from '@/utils/axios'
+import React from 'react';
+import Head from 'next/head';
+import axios from '@/utils/axios';
+
 const OurClients = ({data}) => {
-  console.log(data)
+ console.log(data)
   return (
     <div>
-    <Head><title>{data.data.title}</title></Head>
-      OurClients</div>
-  )
-}
-export async function getServerSideProps () {
+      <Head><title>{data.data.title}</title></Head>
+      OurClients
+    </div>
+  );
+};
+export async function getStaticProps () {
   try {
     const response = await axios.get ('/page/home', {
       headers: {
@@ -26,8 +28,6 @@ export async function getServerSideProps () {
     };
   } catch (error) {
     console.error ('Error fetching data:', error);
-    
   }
 }
-
-export default OurClients
+export default OurClients;
