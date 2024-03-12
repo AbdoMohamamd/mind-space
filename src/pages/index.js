@@ -36,11 +36,11 @@ const HomePage = ({data, data1}) => {
 
   return (
     <main className="md:pt-8">
-      <Head>
+      {/* <Head>
         <title>{data1.data.title}</title>
         <link rel="icon" href={data1.data.seo_image} />
         <meta name="description" content={data1.data.seo_description} />
-      </Head>
+      </Head> */}
       <NavBar />
       <Banner />
       <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
