@@ -6,12 +6,9 @@ import Grid from '@/components/Grid/Grid';
 import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
+import CustomHead from '@/components/CustomHead/CustomHead';
 
-
-
-
-const HomePage = ({data}) => {
-  
+const HomePage = ({data, data1}) => {
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
@@ -38,7 +35,7 @@ const HomePage = ({data}) => {
 
   return (
     <main className="md:pt-8">
-
+      <CustomHead data={data1.data} />
       <NavBar />
       <Banner />
       <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
@@ -72,12 +69,19 @@ export async function getServerSideProps () {
       },
     });
 
-   const data=response.data
+    const data = response.data;
+    const response1 = await axios.get ('/page/home', {
+      headers: {
+        'Accept-Language': 'en',
+      },
+    });
+
+    const data1 = response1.data;
 
     return {
       props: {
         data,
-      
+        data1,
       },
     };
   } catch (error) {
