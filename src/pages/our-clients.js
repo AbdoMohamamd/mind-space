@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import axios from '@/utils/axios';
 
+
+
 const OurClients = ({data}) => {
  console.log(data)
   return (
