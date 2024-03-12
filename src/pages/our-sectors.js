@@ -7,7 +7,7 @@ import Banner from '@/components/Banner/Banner';
 import Footer from '@/components/Footer/Footer';
 
 const OurSectors = ({data}) => {
-  console.log (data);
+
   return (
     <div >
       <div className="min-h-screen container ">

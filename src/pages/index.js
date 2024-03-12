@@ -6,12 +6,10 @@ import Grid from '@/components/Grid/Grid';
 import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
-import Head from 'next/head'
 
 
-const HomePage = ({data,data1}) => {
 
-  const metadata=data1.data
+const HomePage = ({data}) => {
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
