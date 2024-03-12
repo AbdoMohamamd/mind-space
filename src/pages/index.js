@@ -73,7 +73,7 @@ export async function getServerSideProps () {
     });
 
 
-   
+   const data=response.data
 
     return {
       props: {
