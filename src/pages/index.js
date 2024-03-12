@@ -6,9 +6,9 @@ import Grid from '@/components/Grid/Grid';
 import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
-import CustomHead from '@/components/CustomHead/CustomHead';
 
-export const metadata = {title: 'hello'};
+
+
 
 const HomePage = ({data}) => {
   
@@ -71,7 +71,6 @@ export async function getServerSideProps () {
         'Accept-Language': 'en',
       },
     });
-
 
    const data=response.data
 
