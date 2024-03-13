@@ -7,10 +7,8 @@ import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
 
-
-
-const HomePage = ({data}) => {
-  console.log(data)
+const HomePage = ({data1, data2}) => {
+  console.log (data2);
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
@@ -37,7 +35,7 @@ const HomePage = ({data}) => {
 
   return (
     <main className="md:pt-8">
-  
+
       <NavBar />
       <Banner />
       <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
@@ -48,7 +46,7 @@ const HomePage = ({data}) => {
       </div>
 
       <section className="flex flex-col items-center mb-12 md:mb-36 ">
-        <Grid data={data.data.sections} />
+        <Grid data={data1.data.sections} />
         <Image src="/images/line.svg" width={200} height={200} alt={'line'} />
         <p className="font-georama">
           <span className="font-georama font-medium text-primary-red">
@@ -70,16 +68,26 @@ export async function getStaticProps () {
         'Accept-Language': 'en',
       },
     });
-
-    const data = response.data;
+    const data1 = response.data;
+    const response1 = await axios.get ('/page/home', {
+      headers: {
+        'Accept-Language': 'en',
+      },
+    });
+    const data2 = response1.data;
 
     return {
       props: {
-        data,
+        data1,data2
       },
     };
   } catch (error) {
     console.error ('Error fetching data:', error);
+    return {
+      props: {
+        data1: null,data2:null
+      },
+    };
   }
 }
 
