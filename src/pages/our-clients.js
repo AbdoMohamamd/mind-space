@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import axios from '@/utils/axios';
+import CustomHead from '@/components/CustomHead/CustomHead';
 
 
 
@@ -8,7 +9,7 @@ const OurClients = ({data}) => {
  console.log(data)
   return (
     <div>
-      <Head><title>{data.data.title}</title></Head>
+      <CustomHead data={data}/>
       OurClients
     </div>
   );
