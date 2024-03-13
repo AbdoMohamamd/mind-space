@@ -9,7 +9,7 @@ const OurClients = ({data}) => {
  console.log(data)
   return (
     <div>
-      <CustomHead data={data}/>
+      <CustomHead data={data.data}/>
       OurClients
     </div>
   );
