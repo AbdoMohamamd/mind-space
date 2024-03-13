@@ -6,6 +6,7 @@ import Grid from '@/components/Grid/Grid';
 import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
+import CustomHead from '@/components/CustomHead/CustomHead';
 
 const HomePage = ({data1, data2}) => {
   console.log (data2);
@@ -35,7 +36,7 @@ const HomePage = ({data1, data2}) => {
 
   return (
     <main className="md:pt-8">
-
+<CustomHead data={data2.data}/>
       <NavBar />
       <Banner />
       <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
