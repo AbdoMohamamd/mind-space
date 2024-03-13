@@ -10,6 +10,7 @@ import Footer from '@/components/Footer/Footer';
 
 
 const HomePage = ({data}) => {
+  console.log(data)
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
@@ -62,7 +63,7 @@ const HomePage = ({data}) => {
   );
 };
 
-export async function getServerSideProps () {
+export async function getStaticProps () {
   try {
     const response = await axios.get ('/page/news', {
       headers: {
