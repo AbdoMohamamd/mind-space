@@ -59,7 +59,7 @@ const HomePage = ({data1, data2}) => {
         </p>
       </section>
       <TextSwiper/>
-     <div className='bg-primary-red mt-12'> <Footer /></div>
+     <div className='bg-primary-red mt-32'> <Footer /></div>
     </main>
   );
 };
