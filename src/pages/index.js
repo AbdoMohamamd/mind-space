@@ -8,6 +8,8 @@ import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
 import CustomHead from '@/components/CustomHead/CustomHead';
 import TextSwiper from '@/components/TextSwiper/TextSwiper';
+import PhotoWithText from '@/components/PhotoWithText/PhotoWithText';
+import MovieCollection from '@/../public/images/movie-collection.jpg';
 
 const HomePage = ({data1, data2}) => {
   console.log (data2);
@@ -58,8 +60,26 @@ const HomePage = ({data1, data2}) => {
           to see your project added here
         </p>
       </section>
-      <TextSwiper/>
-     <div className='bg-primary-red mt-32'> <Footer /></div>
+      <TextSwiper />
+      <section className="mt-32">
+        <PhotoWithText
+          text={'Immerse yourself in the captivating world of cinema'}
+          subtext={
+            'Where every frame tells a story and every moment sparks emotion '
+          }
+          textFirst={true}
+          image={MovieCollection}
+        />
+        <PhotoWithText
+          text={'Immerse yourself in the captivating world of cinema'}
+          subtext={
+            'Where every frame tells a story and every moment sparks emotion '
+          }
+          textFirst={false}
+          image={MovieCollection}
+        />
+      </section>
+      <div className="bg-primary-red mt-32"> <Footer /></div>
     </main>
   );
 };

@@ -72,7 +72,7 @@ const TextSwiper = () => {
         <div>
           {items.map ((item, index) => (
             <div
-              className={`${currentIndex === index ? 'block' : 'hidden'} flex items-center px-12 bg-zinc-800 h-full mt-5 py-5 md:py-0`}
+              className={`${currentIndex === index ? 'block' : 'hidden'} flex items-center px-12 bg-zinc-800 h-full mt-5 md:mt-0 py-5 md:py-0`}
             >
               <p className="font-normal text-base lg:text-lg xl:text-xl">
                 {item.paragraph}
