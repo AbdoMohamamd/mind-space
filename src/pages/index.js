@@ -7,6 +7,7 @@ import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
 import CustomHead from '@/components/CustomHead/CustomHead';
+import TextSwiper from '@/components/TextSwiper/TextSwiper';
 
 const HomePage = ({data1, data2}) => {
   console.log (data2);
@@ -36,10 +37,10 @@ const HomePage = ({data1, data2}) => {
 
   return (
     <main className="md:pt-8">
-<CustomHead data={data2.data}/>
+      <CustomHead data={data2.data} />
       <NavBar />
       <Banner />
-      <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
+      <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 md:left-5 lg:left-20 rounded-lg">
         <div
           className={`w-1  bg-primary-red  rounded-lg`}
           style={{height: scrollBarPercentage + '%'}}
@@ -57,7 +58,8 @@ const HomePage = ({data1, data2}) => {
           to see your project added here
         </p>
       </section>
-      <Footer />
+      <TextSwiper/>
+     <div className='bg-primary-red mt-12'> <Footer /></div>
     </main>
   );
 };
@@ -79,14 +81,16 @@ export async function getStaticProps () {
 
     return {
       props: {
-        data1,data2
+        data1,
+        data2,
       },
     };
   } catch (error) {
     console.error ('Error fetching data:', error);
     return {
       props: {
-        data1: null,data2:null
+        data1: null,
+        data2: null,
       },
     };
   }
