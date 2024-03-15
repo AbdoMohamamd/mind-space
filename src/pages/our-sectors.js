@@ -9,7 +9,7 @@ import Head from 'next/head';
 
 const OurSectors = ({data1, data2}) => {
   return (
-    <div>
+    <div  className="md:pt-8">
       <div className="min-h-screen container ">
         <Head>
           <title>our sectors</title>
