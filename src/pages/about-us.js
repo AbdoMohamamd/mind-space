@@ -1,15 +1,8 @@
 import React from 'react';
-<<<<<<< Updated upstream
-
-const AboutUs = () => {
-  return <div>AboutUs</div>;
-=======
 import Head from 'next/head';
 import axios from '@/utils/axios';
 import CustomHead from '@/components/CustomHead/CustomHead';
 import Footer from '@/components/Footer/Footer';
-
-
 
 const AboutUs = ({data}) => {
  console.log(data)
@@ -25,7 +18,7 @@ const AboutUs = ({data}) => {
       <Footer/>
     </div>
   );
->>>>>>> Stashed changes
+
 };
 
 export default AboutUs;
