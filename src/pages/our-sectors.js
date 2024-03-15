@@ -9,16 +9,17 @@ import Head from 'next/head';
 
 const OurSectors = ({data1, data2}) => {
   return (
-    <div  className="md:pt-8">
-      <div className="min-h-screen container ">
-        <Head>
-          <title>our sectors</title>
-          <link rel="icon" href={data2.data.seo_image} />
-          <meta name='description' content={data2.data.seo_description}/>
+    <div className="md:pt-8">
+      <Head>
+        <title>our sectors</title>
+        <link rel="icon" href={data2.data.seo_image} />
+        <meta name="description" content={data2.data.seo_description} />
 
-        </Head>
-        <NavBar />
-        <Banner />
+      </Head>
+      <NavBar />
+      <Banner />
+      <div className="min-h-screen container ">
+
         <h1 className="font-bold font-georama text-center text-3xl md:text-6xl mb-12">
           Our Sectors
         </h1>
