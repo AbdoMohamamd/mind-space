@@ -42,7 +42,7 @@ const TextSwiper = () => {
 
             </div>
           ))}
-          <div className="flex gap-x-10 justify-end">
+          <div className="flex gap-x-10 justify-end md:w-full">
             <div
               className="group relative border-2 border-white hover:border-black hover:bg-white duration-300 ease-in-out rotate-180 p-2 md:p-4 hover:cursor-pointer rounded-full"
               onClick={() => {
