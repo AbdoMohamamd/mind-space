@@ -1,9 +1,39 @@
-import React from 'react'
+import React from 'react';
+import Head from 'next/head';
+import axios from '@/utils/axios';
+import CustomHead from '@/components/CustomHead/CustomHead';
 
-const ContactUs = () => {
+
+
+const ContactUs = ({data}) => {
+ console.log(data)
   return (
-    <div>ContactUs</div>
-  )
-}
+    <div>
+      <Head><title>ContactUs</title>
+      <link rel='icon' href={data.data.seo_image}/>
+      <meta name='description' content={data.data.seo_description}/>
+      </Head>
+      ContactUs
+    </div>
+  );
+};
+export async function getStaticProps () {
+  try {
+    const response = await axios.get ('/page/home', {
+      headers: {
+        'Accept-Language': 'en',
+      },
+    });
 
-export default ContactUs
+    const data = response.data;
+
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.error ('Error fetching data:', error);
+  }
+}
+export default ContactUs;

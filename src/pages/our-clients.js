@@ -9,7 +9,10 @@ const OurClients = ({data}) => {
  console.log(data)
   return (
     <div>
-      <CustomHead data={data.data}/>
+      <Head><title>our clients</title>
+      <link rel='icon' href={data.data.seo_image}/>
+      <meta name='description' content={data.data.seo_description}/>
+      </Head>
       OurClients
     </div>
   );

@@ -5,43 +5,56 @@ import CustomSwiper from '@/components/CustomSwiper/CustomSwiper';
 import NavBar from '@/components/NavBar/NavBar';
 import Banner from '@/components/Banner/Banner';
 import Footer from '@/components/Footer/Footer';
+import Head from 'next/head';
 
-const OurSectors = ({data}) => {
-
+const OurSectors = ({data1, data2}) => {
   return (
-    <div >
+    <div>
       <div className="min-h-screen container ">
+        <Head>
+          <title>our sectors</title>
+          <link rel="icon" href={data2.data.seo_image} />
+          <meta name='description' content={data2.data.seo_description}/>
+
+        </Head>
         <NavBar />
         <Banner />
         <h1 className="font-bold font-georama text-center text-3xl md:text-6xl mb-12">
           Our Sectors
         </h1>
-        <div> <CustomSwiper cards={data.data} /></div>
+        <div> <CustomSwiper cards={data1.data} /></div>
       </div>
-     <div className="bg-primary-red"> <Footer /></div>
+      <div className="bg-primary-red"> <Footer /></div>
     </div>
   );
 };
-export async function getServerSideProps () {
+export async function getStaticProps () {
   try {
     const response = await axios.get ('/projects', {
       headers: {
         'Accept-Language': 'en',
       },
     });
-
-    const data = response.data;
+    const data1 = response.data;
+    const response1 = await axios.get ('/page/home', {
+      headers: {
+        'Accept-Language': 'en',
+      },
+    });
+    const data2 = response1.data;
 
     return {
       props: {
-        data,
+        data1,
+        data2,
       },
     };
   } catch (error) {
     console.error ('Error fetching data:', error);
     return {
       props: {
-        data: null, // You can handle errors by setting data to a default value or showing an error message in your component
+        data1: null,
+        data2: null,
       },
     };
   }
