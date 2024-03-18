@@ -50,7 +50,7 @@ const TextSwiper = () => {
                 if (index > 0) {
                   setCurrentIndex (index - 1);
                 }
-                console.log (currentIndex);
+              else{setCurrentIndex(items.length-1)}
               }}
             >
               <Arrow />
@@ -62,7 +62,7 @@ const TextSwiper = () => {
                 if (index < items.length - 1) {
                   setCurrentIndex (index + 1);
                 }
-                console.log (currentIndex);
+               else{setCurrentIndex(0)}
               }}
             >
               <Arrow />

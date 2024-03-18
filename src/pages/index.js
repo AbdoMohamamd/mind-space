@@ -61,21 +61,21 @@ const HomePage = ({data1, data2}) => {
         </p>
       </section>
       <TextSwiper />
-      <section className="mt-32">
-        <PhotoWithText
-          text={'Immerse yourself in the captivating world of cinema'}
+      <section className="mt-32 gap-y-5 md:gap-y-12 grid">
+      <PhotoWithText
+          text={'IMMERSE YOURSELF IN THE CAPTIVATING WORLD OF CINEMA'}
           subtext={
-            'Where every frame tells a story and every moment sparks emotion '
+            'WHERE EVERY FRAME TELLS A STORY'
           }
-          textFirst={true}
+          textFirst={false}
           image={MovieCollection}
         />
         <PhotoWithText
-          text={'Immerse yourself in the captivating world of cinema'}
+          text={'IMMERSE YOURSELF IN THE CAPTIVATING WORLD OF CINEMA'}
           subtext={
-            'Where every frame tells a story and every moment sparks emotion '
+            'WHERE EVERY FRAME TELLS A STORY'
           }
-          textFirst={false}
+          textFirst={true}
           image={MovieCollection}
         />
       </section>
