@@ -7,11 +7,12 @@ import axios from '@/utils/axios';
 import {useEffect, useState} from 'react';
 import Footer from '@/components/Footer/Footer';
 import CustomHead from '@/components/CustomHead/CustomHead';
+import TextSwiper from '@/components/TextSwiper/TextSwiper';
+import PhotoWithText from '@/components/PhotoWithText/PhotoWithText';
+import MovieCollection from '@/../public/images/movie-collection.jpg';
 
-export const metadata = {title: 'hello'};
-
-const HomePage = ({data}) => {
-  
+const HomePage = ({data1, data2}) => {
+  console.log (data2);
   const [scrollBarPercentage, setScrollBarPercentage] = useState (0);
   useEffect (() => {
     const handleScrollEvent = () => {
@@ -38,10 +39,10 @@ const HomePage = ({data}) => {
 
   return (
     <main className="md:pt-8">
-
+      <CustomHead data={data2.data} />
       <NavBar />
       <Banner />
-      <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 left-20 rounded-lg">
+      <div className="hidden md:block w-1 bg-slate-500 h-1/6 fixed bottom-1/2 md:left-5 lg:left-20 rounded-lg">
         <div
           className={`w-1  bg-primary-red  rounded-lg`}
           style={{height: scrollBarPercentage + '%'}}
@@ -49,7 +50,7 @@ const HomePage = ({data}) => {
       </div>
 
       <section className="flex flex-col items-center mb-12 md:mb-36 ">
-        <Grid data={data.data.sections} />
+        <Grid data={data1.data.sections} />
         <Image src="/images/line.svg" width={200} height={200} alt={'line'} />
         <p className="font-georama">
           <span className="font-georama font-medium text-primary-red">
@@ -59,30 +60,59 @@ const HomePage = ({data}) => {
           to see your project added here
         </p>
       </section>
-      <Footer />
+      <TextSwiper />
+      <section className="mt-32 gap-y-5 md:gap-y-12 grid">
+      <PhotoWithText
+          text={'IMMERSE YOURSELF IN THE CAPTIVATING WORLD OF CINEMA'}
+          subtext={
+            'WHERE EVERY FRAME TELLS A STORY'
+          }
+          textFirst={false}
+          image={MovieCollection}
+        />
+        <PhotoWithText
+          text={'IMMERSE YOURSELF IN THE CAPTIVATING WORLD OF CINEMA'}
+          subtext={
+            'WHERE EVERY FRAME TELLS A STORY'
+          }
+          textFirst={true}
+          image={MovieCollection}
+        />
+      </section>
+      <div className="bg-primary-red mt-32"> <Footer /></div>
     </main>
   );
 };
 
-export async function getServerSideProps () {
+export async function getStaticProps () {
   try {
     const response = await axios.get ('/page/news', {
       headers: {
         'Accept-Language': 'en',
       },
     });
-
-
-   const data=response.data
+    const data1 = response.data;
+    const response1 = await axios.get ('/page/home', {
+      headers: {
+        'Accept-Language': 'en',
+      },
+    });
+    const data2 = response1.data;
 
     return {
       props: {
-        data,
-      
+        data1,
+        data2,
       },
     };
   } catch (error) {
     console.error ('Error fetching data:', error);
+    return {
+      props: {
+        data1: null,
+        data2: null,
+      },
+    };
   }
 }
 

@@ -1,16 +1,13 @@
-import React from 'react'
+
 import React from 'react';
 import Head from 'next/head';
 import axios from '@/utils/axios';
 import CustomHead from '@/components/CustomHead/CustomHead';
 import Footer from '@/components/Footer/Footer';
 
-
-const ContactUs = () => {
+const ContactUs = ({data}) => {
+ console.log(data)
   return (
-
- 
-
     <div className="md:pt-8">
       <Head><title>ContactUs</title>
       <link rel='icon' href={data.data.seo_image}/>
@@ -19,6 +16,7 @@ const ContactUs = () => {
       <Banner />
       ContactUs
       <Footer/>
+
     </div>
   );
 };
@@ -43,4 +41,4 @@ export async function getStaticProps () {
 
 }
 
-export default ContactUs
+export default ContactUs;

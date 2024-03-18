@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import axios from '@/utils/axios';
+import CustomHead from '@/components/CustomHead/CustomHead';
 
 
 
@@ -13,6 +14,7 @@ const OurClients = ({data}) => {
   return (
 
 
+
     <div className="md:pt-8">
       <Head>
         <title>our clients</title>
@@ -20,6 +22,7 @@ const OurClients = ({data}) => {
         <meta name="description" content={data.data.seo_description} />
       </Head> <NavBar />
       <Banner />
+
       OurClients
       <Footer />
     </div>
