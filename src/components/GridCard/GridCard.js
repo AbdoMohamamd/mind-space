@@ -1,10 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 const GridCard = ({image, title, paragraph, alt}) => {
+  
+  console.log(image)
   return (
     <div className="hover:cursor-pointer ">
       <div className=" overflow-hidden">
-        {' '}
+        {}
         <Image
           width={1000}
           height={1000}
