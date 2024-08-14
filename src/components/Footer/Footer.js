@@ -1,28 +1,28 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import Logo from '@/../public/images/logo.svg';
-import Instagram from '@/../public/images/instagram.svg';
-import LinkedIn from '@/../public/images/linkedIn-logo.svg';
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/../public/images/logo.svg";
+import Instagram from "@/../public/images/instagram.svg";
+import LinkedIn from "@/../public/images/linkedIn-logo.svg";
 
 // Footer component
 const Footer = () => {
   // Data for the footer
-  const emailAddress = 'example@gmail.com';
+  const emailAddress = "example@gmail.com";
   const links = [
-    {text: 'home', href: '/'},
-    {text: 'about us', href: '/about-us'},
+    { text: "home", href: "/" },
+    { text: "about us", href: "#about-us" },
 
-    {text: 'our clients', href: '/our-clients'},
-    {text: 'our sectors', href: '/our-sectors'},
-    {text: 'contact us', href: '/contact-us'},
+    { text: "our clients", href: "#our-clients" },
+    { text: "our sectors", href: "/our-sectors" },
+    { text: "contact us", href: "#contact-us" },
   ];
   const offices = [
-    'dubai, UAE',
-    'beirut, LEBANON',
-    'paris, FRANCE',
-    'cairo, EGYPT',
-    'riyadh, KSA',
+    "dubai, UAE",
+    "beirut, LEBANON",
+    "paris, FRANCE",
+    "cairo, EGYPT",
+    "riyadh, KSA",
   ];
 
   return (
@@ -33,7 +33,7 @@ const Footer = () => {
           <h1 className="text-xl font-georama font-bold mb-5 md:text-2xl">
             Sitemap
           </h1>
-          {links.map ((link, index) => (
+          {links.map((link, index) => (
             <Link
               href={link.href}
               key={index}
@@ -50,7 +50,7 @@ const Footer = () => {
           <h1 className="text-xl font-georama font-bold mb-5 md:text-2xl">
             Offices
           </h1>
-          {offices.map ((office, index) => (
+          {offices.map((office, index) => (
             <Link
               href="/"
               key={index}
@@ -81,7 +81,7 @@ const Footer = () => {
       <div className="flex justify-between flex-col md:flex-row">
         <div className="flex gap-4 items-center p-1 mb-5 md:mb-0">
           <Link href="/">
-            <Image src={Logo} loading={'eager'} alt="footer logo" />
+            <Image src={Logo} loading={"eager"} alt="footer logo" />
           </Link>
           <span className="hidden md:block text-4xl">|</span>
 
